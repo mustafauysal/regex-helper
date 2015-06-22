@@ -1,0 +1,27 @@
+{
+  "name": "mustafuysal/regex-helper",
+  "type": "library",
+  "description": "Regex helper",
+  "keywords": ["regex","media"],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Mustafa Uysal",
+      "email": "mustafa@lettoblog.com"
+    },
+    {
+      "name": "Uğur Soğukpınar",
+      "email": "sogukpinar.ugur@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=5.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "4.7.*"
+  },
+  "autoload": {
+    "psr-4": {"RegexHelper\\": "src/"}
+  }
+}
+
