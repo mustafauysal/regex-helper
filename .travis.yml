@@ -1,7 +1,5 @@
 language: php
 
-sudo: required
-
 php:
   - 5.4
   - 5.5
@@ -9,6 +7,7 @@ php:
 
 before_install:
   - phpenv rehash
+  - composer update
 
 script:
   - phpunit
