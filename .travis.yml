@@ -1,12 +1,13 @@
 language: php
 
+sudo: required
+
 php:
   - 5.4
   - 5.5
   - 5.6
 
 before_install:
-  - wget http://cs.sensiolabs.org/get/php-cs-fixer.phar
   - phpenv rehash
 
 script:
