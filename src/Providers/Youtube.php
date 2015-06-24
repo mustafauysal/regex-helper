@@ -3,32 +3,17 @@
 namespace RegexHelper\Providers;
 
 use RegexHelper\Exceptions\NotFoundException;
+use RegexHelper\Provider;
 
-class Youtube
+class Youtube extends Provider
 {
 
-    private $url;
-
-    public function setUrl( $url )
-    {
-        $this->url = $url;
-    }
-
-    public function get( $param )
-    {
-        if ( ! method_exists( $this, $param )) {
-            throw new NotFoundException();
-        }
-
-        return $this->$param();
-
-    }
 
     /**
      * Fetch video id from youtube url
      * @return mixed
      */
-    private function id()
+    public function id()
     {
         /**
          * @see  http://stackoverflow.com/a/5831191/1942303
@@ -63,7 +48,7 @@ class Youtube
      * Fetch time value from youtube url
      * @return mixed
      */
-    private function time()
+    public function time()
     {
 
         preg_match( '~(?:http|https|)(?::\/\/|)(?:www.|)(?:youtu\.be\/|youtube\.com(?:\/embed\/|\/v\/|\/watch\?v=|\/ytscreeningroom\?v=|\/feeds\/api\/videos\/|\/user\S*[^\w\-\s]|\S*[^\w\-\s]))([\w\-]{11})[a-z0-9;:@#?&%=+\/\$_.-]*(t=((\d+h)?(\d+m)?(\d+s)?))~i', $this->url, $matches );
